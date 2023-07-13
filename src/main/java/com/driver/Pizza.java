@@ -48,10 +48,30 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        bill=("Base Price Of The Pizza: "+price);
-
+        bill=("Base Price Of The Pizza: ");
+        bill+=(isVeg ? 300 : 400);
         bill+=("\n");
-        if(!Deluxe){
+        price = (isVeg ? 300 : 400);
+        if(Deluxe){
+            if (!isVeg) {
+                price+=200;
+                bill+=("Extra Cheese Added: 80\n");
+                bill+=("Extra Toppings Added: 120\n");
+                if (takeaway) {
+                    price+=20;
+                    bill+=("Paperbag Added: 20\n");
+                }
+            } else {
+                price+=150;
+                bill+=("Extra Cheese Added: 80\n");
+                bill+=("Extra Toppings Added: 70\n");
+                if (takeaway) {
+                    price+=20;
+                    bill+=("Paperbag Added: 20\n");
+                }
+            }
+        }
+        else{
             if (!isVeg) {
                 if (hasExtraCheese) {
                     price+=80;
@@ -79,12 +99,6 @@ public class Pizza {
                     bill+=("Paperbag Added: 20\n");
                 }
             }
-        }else{
-            if (takeaway) {
-                price+=20;
-                bill+=("Paperbag Added: 20\n");
-            }
-
         }
 
         bill+=("Total Price: "+price+"\n");
