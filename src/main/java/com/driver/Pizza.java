@@ -28,6 +28,7 @@ public class Pizza {
     public void addExtraCheese(){
         // your code goes here
         if (!hasExtraCheese) {
+            price+=80;
             hasExtraCheese = true;
         }
     }
@@ -35,6 +36,11 @@ public class Pizza {
     public void addExtraToppings(){
         // your code goes here
         if (!hasExtraToppings) {
+            if(isVeg){
+                price+=70;
+            }else{
+                price+=80;
+            }
             hasExtraToppings = true;
         }
     }
@@ -42,6 +48,7 @@ public class Pizza {
     public void addTakeaway(){
         // your code goes here
         if (!takeaway) {
+            price+=20;
             takeaway = true;
         }
     }

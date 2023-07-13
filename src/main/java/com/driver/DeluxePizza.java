@@ -11,7 +11,7 @@ public class DeluxePizza extends Pizza {
         }else{
             price = 600;
         }
-        hasExtraCheese = true;
-        hasExtraToppings = true;
+        addExtraCheese();
+        addExtraToppings();
     }
 }
